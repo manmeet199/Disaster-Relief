@@ -42,6 +42,8 @@ class Register extends Component {
   render() {
     return (
       <div className="form-container">
+        <h2>Register Here</h2>
+        <div className="seperator"></div>
         <form onSubmit={this.handleSubmit} className="form">
           <div className="form-element">
             <label htmlFor="fullName">Full Name</label>
