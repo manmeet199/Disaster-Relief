@@ -1,12 +1,16 @@
 import React from "react";
+import Navbar from "../navbar/navbar";
 import MissingDetail from "./missingDetail/missingDetail";
 import MissingRegister from "./missingRegister/missingRegister";
 
 const Missing = () => {
   return (
-    <div className="missing-container">
-      <MissingRegister />
-      <MissingDetail />
+    <div>
+      <Navbar />
+      <div className="missing-container">
+        <MissingRegister />
+        <MissingDetail />
+      </div>
     </div>
   );
 };

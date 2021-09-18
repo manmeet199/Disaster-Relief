@@ -7,7 +7,7 @@ import Home from "./components/home/home";
 function App() {
   return (
     <Router>
-      <Route path="/" component={Home} />
+      <Route path="/" exact component={Home} />
       <Route path="/register" component={Register} />
       {/* map route */}
       {/* <Route path="/map" component={Map} /> */}
