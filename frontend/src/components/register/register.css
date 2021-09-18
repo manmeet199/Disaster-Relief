@@ -1,0 +1,22 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-element {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px;
+  flex-direction: column;
+}
+.form-element > label {
+  margin: 8px 0;
+  color: rgb(70, 70, 70);
+}
+.submit-button {
+  margin-top: 10px;
+}
