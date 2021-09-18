@@ -1,5 +1,5 @@
 import React from "react";
-
+import Missing from "./components/missing/missing";
 import Register from "./components/register/register";
 import Navbar from "./components/navbar/navbar";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
@@ -11,7 +11,7 @@ function App() {
       {/* map route */}
       {/* <Route path="/map" component={Map} /> */}
       {/* missing route */}
-      {/* <Route path="/missing" component={Missing} /> */}
+      <Route path="/missing" component={Missing} />
     </Router>
   );
 }

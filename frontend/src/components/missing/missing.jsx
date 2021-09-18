@@ -1,18 +1,14 @@
-import React from 'react';
+import React from "react";
+import MissingDetail from "./missingDetail/missingDetail";
+import MissingRegister from "./missingRegister/missingRegister";
 
-class Missing extends React.Component {
-    constructor(){
-        super();
-        this.state={
-            fullname="",
-            location="",
-            photo="",
-            
-        }
-    }
-    render() { 
-        return <div>missing component</div>;
-    }
-}
- 
+const Missing = () => {
+  return (
+    <div className="missing-container">
+      <MissingRegister />
+      <MissingDetail />
+    </div>
+  );
+};
+
 export default Missing;
