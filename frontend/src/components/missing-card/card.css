@@ -1,0 +1,26 @@
+.card {
+  margin: 20px;
+  width: 70%;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-img-div {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.card-img-div img {
+  width: 80%;
+  height: auto;
+}
+
+.card-detail-div {
+  padding: 50px;
+}

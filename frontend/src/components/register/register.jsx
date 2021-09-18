@@ -23,6 +23,13 @@ class Register extends Component {
     registerPerson({ firstname, lastname, email, phoneno, medical_info }).then(
       (response) => {
         console.log(response);
+        this.setState({
+          firstname: "",
+          lastname: "",
+          email: "",
+          phoneno: "",
+          medical_info: "",
+        });
       }
     );
   };
