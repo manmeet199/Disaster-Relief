@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 # - Name(CharField)
 # - Photo(ImageField)
@@ -9,7 +10,7 @@ from django.db import models
 
 class MissingPersonModal(models.Model):
     name = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to="images/",blank=True)
+    photo = models.ImageField(upload_to="images/", blank=True)
     age = models.CharField(max_length=20)
     place = models.TextField()
     description = models.TextField()
