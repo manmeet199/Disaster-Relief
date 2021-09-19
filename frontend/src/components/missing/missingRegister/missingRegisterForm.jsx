@@ -22,7 +22,7 @@ class missingRegisterForm extends Component {
   render() {
     return (
       <div className="form-container">
-        <h2>missingRegisterForm Here</h2>
+        <h2>Give the Details of Missing Person Here</h2>
         <div className="seperator"></div>
         <form onSubmit={this.handleSubmit} className="form">
           <div className="form-element">
@@ -58,8 +58,8 @@ class missingRegisterForm extends Component {
             <label htmlFor="photo">photo </label>
             <input
               type="image"
-              value={this.state.phoneno}
-              onChange={this.handleChange("phoneno")}
+              value={this.state.photo}
+              onChange={this.handleChange("photo")}
               name="photo"
               required
             />

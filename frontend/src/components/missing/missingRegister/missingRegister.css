@@ -53,6 +53,7 @@
   height: 40px;
   border-radius: 9px;
   font-weight: 700px;
+  cursor: pointer;
 }
 .missingRegister-image > img {
   width: 400px;
