@@ -1,0 +1,50 @@
+.home-container {
+  display: flex;
+  justify-content: space-around;
+}
+.home-content {
+  width: 40%;
+}
+.home-content > p {
+  font-size: 28px;
+  font-family: "Permanent Marker", cursive;
+}
+.home-content > h3 {
+  letter-spacing: 1px;
+}
+.home-register-button {
+  width: 120px;
+  height: 40px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: rgb(42, 35, 51);
+  color: white;
+}
+.home-register-button-navlink {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+.home-image {
+  display: flex;
+  justify-content: center;
+}
+.home-image > img {
+  width: 400px;
+}
+.image-container {
+  display: flex;
+}
+@media only screen and (max-width: 720px) {
+  .home-container {
+    flex-direction: column;
+  }
+  .home-content {
+    width: 100%;
+  }
+
+  .home-image > img {
+    width: 300px;
+  }
+}
