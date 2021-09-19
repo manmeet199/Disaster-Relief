@@ -35,3 +35,26 @@ export const addMissingPerson = (personDetail) => {
     })
     .catch((err) => console.log(err));
 };
+
+export const getUserLocations = () => {
+  return fetch(`http://127.0.0.1:8000/api/user/loc-list/`, { method: `GET` })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const addUserLocation = (personData) => {
+  const formData = new FormData();
+  for (const dataName in personData) {
+    formData.append(dataName, personData[dataName]);
+  }
+  return fetch(`http://127.0.0.1:8000/api/user/add-loc/`, {
+    method: `POST`,
+    body: formData,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};

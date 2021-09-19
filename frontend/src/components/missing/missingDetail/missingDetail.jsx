@@ -29,7 +29,10 @@ class MissingDetail extends React.Component {
   render() {
     return (
       <div>
+        <br />
+        <hr />
         <h1>Missing persons Detail</h1>
+        <hr />
         {this.state.personInfo.map((info, index) => {
           return (
             <div key={index} className="info-card">

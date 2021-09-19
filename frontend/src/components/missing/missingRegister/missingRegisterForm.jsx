@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { addMissingPerson } from "../../../helper/apiCalls";
 
 class missingRegisterForm extends Component {
   constructor() {
     super();
     this.state = {
-      firstname: "",
-      lastname: "",
+      name: "",
+      place: "",
       age: "",
       photo: "",
       description: "",
@@ -16,7 +17,19 @@ class missingRegisterForm extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const { firstname, lastname, age, photo, description } = this.state;
+    const { name, place, age, photo, description } = this.state;
+    addMissingPerson({ name, place, age, description, photo })
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          name: "",
+          place: "",
+          age: "",
+          description: "",
+          photo: "",
+        });
+      })
+      .catch((err) => console.log(err));
   };
 
   render() {
@@ -26,22 +39,22 @@ class missingRegisterForm extends Component {
         <div className="seperator"></div>
         <form onSubmit={this.handleSubmit} className="form">
           <div className="form-element">
-            <label htmlFor="firstname">First Name</label>
+            <label htmlFor="name">Name</label>
             <input
               type="text"
-              value={this.state.firstname}
-              onChange={this.handleChange("firstname")}
-              name="firstname"
+              value={this.state.name}
+              onChange={this.handleChange("name")}
+              name="name"
               required
             />
           </div>
           <div className="form-element">
-            <label htmlFor="lastname">Last Name</label>
+            <label htmlFor="place">Place</label>
             <input
               type="text"
-              value={this.state.lastname}
-              onChange={this.handleChange("lastname")}
-              name="lastname"
+              value={this.state.place}
+              onChange={this.handleChange("place")}
+              name="place"
             />
           </div>
           <div className="form-element">
@@ -76,6 +89,17 @@ class missingRegisterForm extends Component {
               value={this.state.description}
               onChange={this.handleChange("description")}
             ></textarea>
+          </div>
+
+          <div className="form-element">
+            <label for="photo">Select a file:</label>
+            <input
+              type="file"
+              id="myfile"
+              onChange={this.handleChange("photo")}
+              value={undefined}
+              name="myfile"
+            />
           </div>
 
           <input
