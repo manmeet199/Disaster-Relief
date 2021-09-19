@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import Users
+from .models import Users,UserLoc
 from django.views.decorators.csrf import csrf_exempt
 import json
 from rest_framework import viewsets
-from .serializers import UserSerializer
+from .serializers import UserSerializer,UserLocSerializer
 
 
 # Create your views here.
@@ -26,6 +26,24 @@ def Register(request):
     except:
         return JsonResponse({'error':"Not registered"})
 
+@csrf_exempt
+def AddLoc(request):
+    if request.method!="POST":
+        return JsonResponse({'error': 'Accepting only Post request'})
+    try:
+        lat = request.POST['lat']
+        long = request.POST['long']
+
+        instance = UserLoc.objects.create(lat=lat,long=long)
+        instance.save()
+        return JsonResponse({'success':'Added User loc'})
+    except:
+        return JsonResponse({'error':"Not Added"})
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = Users.objects.all().order_by('id')
     serializer_class = UserSerializer
+
+class UserLocViewSet(viewsets.ModelViewSet):
+    queryset = UserLoc.objects.all().order_by('id')
+    serializer_class = UserLocSerializer

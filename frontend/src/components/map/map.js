@@ -7,20 +7,28 @@ import "leaflet/dist/leaflet.css";
 import Navbar from "../navbar/navbar";
 import { Icon } from "leaflet";
 import pin from "../img/pin.png";
+import { geolocated } from "react-geolocated";
 
-export default function LMap() {
-  const [center, setCenter] = useState({ lat: 12.865653, lng: 77.566395 });
+function LMap(props) {
+  const [center, setCenter] = useState({ lat: 12.97752, lng: 77.579153 });
   const [campLoc, setcampLoc] = useState([
-    { lat: 12.864774, lng: 77.563499 },
+    { lat: 12.976128, lng: 77.5749632 },
     { lat: 20.160387, lng: 84.372575 },
   ]);
+  const [True, setTrue] = useState(false);
   const ZOOM_LEVEL = 15;
   const mapRef = useRef();
+
+  const handleSubmit = () => {
+    const long = props.coords ? props.coords.longitude : center.lng;
+    const latit = props.coords ? props.coords.latitude : center.lat;
+    console.log(long, latit);
+  };
 
   return (
     <div>
       <Navbar />
-      <button>Click me to share location</button>
+      <button onClick={handleSubmit()}>Click me to share location</button>
       <MapContainer
         className="leaflet-container"
         center={[center.lat, center.lng]}
@@ -49,3 +57,10 @@ export default function LMap() {
     </div>
   );
 }
+
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: true,
+  },
+  userDecisionTimeout: 10000,
+})(LMap);

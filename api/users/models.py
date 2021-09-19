@@ -12,3 +12,7 @@ class Users(models.Model):
 
     def __str__(self):
         return self.firstname
+
+class UserLoc(models.Model):
+    lat = models.CharField(max_length=30)
+    long = models.CharField(max_length=30)
