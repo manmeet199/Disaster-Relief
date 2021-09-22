@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
 const Navbar = () => {
-  return (
+  return ( 
+    
     <nav className="nav-container">
       <div className="nav-logo">
         <NavLink to="/">Logo</NavLink>
